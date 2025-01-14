@@ -17,7 +17,7 @@ void selectSort(std::vector<T>& arr){
                 minIndex = j;
             }
         }
-        UTIL_H::swap(arr, i, minIndex);
+        std::swap(arr[i], arr[minIndex]);
     }
 }
 
@@ -29,7 +29,7 @@ void bubbleSort(std::vector<T>& arr){
         bool flag = false;  // 每轮开始时重置标志
         for(int j = 1; j <= i; j++){
             if(arr[j-1] > arr[j]){
-                UTIL_H::swap(arr, j-1, j);
+                std::swap(arr[j-1], arr[j]);
                 flag = true;
             }
         }
@@ -45,7 +45,7 @@ void insertSort(std::vector<T>& arr){
     for(int i = 1; i < arr.size(); i++){
         for(int j = i-1; j >= 0; j--){
             if(arr[j] > arr[j+1]){
-                UTIL_H::swap(arr, j, j+1);
+                std::swap(arr[j], arr[j+1]);
             }else{
                 break;
             }

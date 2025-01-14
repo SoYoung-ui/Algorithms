@@ -1,0 +1,17 @@
+# 忽略编译产生的可执行文件
+test
+*.exe
+*.out
+
+# 忽略编译产生的对象文件
+*.o
+*.obj
+
+# 忽略 VS Code 的配置文件夹（如果你不想同步 VS Code 配置）
+.vscode/
+
+# 忽略 macOS 系统文件
+.DS_Store
+
+# 忽略其他编译器/IDE生成的文件和目录
+*.dSYM/
