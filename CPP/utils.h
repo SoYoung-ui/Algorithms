@@ -6,8 +6,14 @@
 #include <functional>
 #include <random>
 
+#include "sorting.h"
+
 // 随机数组的最大长度
 #define N 100
+// 随机数组中数的上界的范围
+constexpr int upperRange[] = {500, 1000};
+// 随机数组中数的下界的范围
+constexpr int lowerRange[] = {-500, 0};
 
 // swap, 交换容器两个位置的数
 template<typename T>
@@ -43,47 +49,4 @@ std::vector<int> genRandomArray(int size, int minVal, int maxVal) {
     }
     return arr;
 }
-
-// 对数器
-template<typename T>
-void comparator(
-    const std::vector<std::function<void(std::vector<T>&)>>& algorithms,
-    int testTimes
-) {
-    int maxVal = getRandom(1000, 500);
-    int minVal = getRandom(0, -500);
-    std::cout << "测试开始！" << std::endl;
-    for(int i = 0; i < testTimes; i++){
-        // 结果数组
-        std::vector<std::vector<T>> results;
-        // 随机得到长度
-        int size = getRandom(N-1);
-        // 得到随机数组
-        std::vector<T> arr = genRandomArray(size, minVal, maxVal);
-        
-        for(const auto& algo : algorithms){
-            // 复制数组
-            std::vector<T> arr_copy = arr;
-            algo(arr_copy);  // 直接对数组进行排序
-            results.push_back(arr_copy);  // 保存排序后的数组
-        }
-
-        // 对比测试结果
-        bool allEqual = true;
-        for(size_t j = 1; j < results.size(); ++j){
-            if(results[j] != results[0]) {
-                allEqual = false;
-                break;
-            }
-        }
-
-        // 如果结果不一致，输出错误信息
-        if(!allEqual){
-            std::cout << "测试失败！" << std::endl;
-            return;
-        }
-    }
-    std::cout << "测试通过！" << std::endl;
-}
-
 #endif
