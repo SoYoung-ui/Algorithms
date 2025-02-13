@@ -20,13 +20,17 @@ class ListNode{
 class BiListNode{
     public:
     int val;
-    BiListNode* pre;
+    BiListNode* last;
     BiListNode* next;
 
     BiListNode(int val){
         this->val = val;
     }
 
-    
+    BiListNode(int val, BiListNode* last, BiListNode* next){
+        this->val = val;
+        this->last = last;
+        this->next = next;
+    }
 };
 #endif
