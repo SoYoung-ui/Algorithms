@@ -55,5 +55,7 @@
     },
     "code-runner.executorMap": {
         "cpp": "cd $dir && g++ $fileName -std=c++11 -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
-    }
+    },
+    "editor.fontSize": 22,
+    "chat.editor.fontSize": 22
 }

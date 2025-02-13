@@ -1,5 +1,10 @@
 class Sorting:
     @staticmethod
+    # 选择排序
+    # [0, N)找到最小的，和0位置的互换
+    # [1, N)找到最小的，和1位置的互换
+    # ...
+    # [N-2, N)找到最小的，和N-2位置的互换
     def select_sort(arr: list) -> None:
         if len(arr) < 2:
             return
@@ -12,6 +17,8 @@ class Sorting:
             arr[i], arr[min_idx] = arr[min_idx], arr[i]
     
     @staticmethod
+    # 冒泡排序
+    # 
     def bubble_sort(arr: list) -> None:
         if len(arr) < 2:
             return
