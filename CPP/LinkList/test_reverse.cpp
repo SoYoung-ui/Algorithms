@@ -2,6 +2,7 @@
 #include "../utils.h"
 #include <iostream>
 
+
 // 反转单链表
 ListNode* reverseList(ListNode* head){
      ListNode* pre = nullptr;
@@ -35,12 +36,7 @@ int main(){
         std::cout << num << " ";
     }
     std::cout << std::endl;
-    ListNode* List = new ListNode(arr[0]);
-    ListNode* index = List;
-    for(int i = 1; i < arr.size(); i++){
-        index->next = new ListNode(arr[i]);
-        index = index->next;
-    }
+    ListNode* List = UTIL_H::genLinkList(arr);
     ListNode* cur = List;
     for(int i = 0; i < arr.size(); i++){
         std::cout << cur->val << " ";

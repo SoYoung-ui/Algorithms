@@ -1,5 +1,5 @@
 #ifndef BasicStructure
-
+#define BasicStructure
 // 单链表节点
 class ListNode{
     public:

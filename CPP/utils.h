@@ -7,6 +7,7 @@
 #include <random>
 
 #include "sorting.h"
+#include "Basic_Structure.h"
 
 // 随机数组的最大长度
 #define N 100
@@ -48,5 +49,19 @@ std::vector<int> genRandomArray(int size, int minVal, int maxVal) {
         arr[i] = getRandom(maxVal, minVal);
     }
     return arr;
+}
+
+// 根据一个数组构造一个链表
+ListNode* genLinkList(std::vector<int>& arr){
+    if(arr.empty()){
+        return nullptr;
+    }
+    ListNode* List = new ListNode(arr[0]);
+    ListNode* index = List;
+    for(int i = 1; i < arr.size(); i++){
+        index->next = new ListNode(arr[i]);
+        index = index->next;
+    }
+    return List;
 }
 #endif
