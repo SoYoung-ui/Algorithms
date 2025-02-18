@@ -35,5 +35,4 @@ ListNode* PartitionList(ListNode* head, int x){
     }
     leftTail->next = rightHead;
     return leftHead;
-
 }
