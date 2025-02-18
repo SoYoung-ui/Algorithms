@@ -6,8 +6,13 @@
 #      =
 # 7 -> 6 -> 5 -> 1
 
-from .. import Basic_Structure
+# from .. import Basic_Structure
+import sys
+import os
+# 将项目根目录添加到 Python 路径中
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from Basic_Structure import ListNode
+
 
 def addTwoLists(List1: ListNode, List2: ListNode) -> ListNode:
     ans, cur = None, None
@@ -38,5 +43,4 @@ l1 = ListNode(2, ListNode(4, ListNode(3)))
 l2 = ListNode(5, ListNode(6, ListNode(4)))
 result = addTwoLists(l1, l2)  # 7 → 0 → 8
 
-print(result.value + "->" + result.next.value + "->" + result.next.next.value)
-    
+print(str(result.value) + "->" + str(result.next.value) + "->" + str(result.next.next.value))
